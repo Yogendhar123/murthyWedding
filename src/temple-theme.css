@@ -1,0 +1,130 @@
+/* Malapaka invitation: emerald temple garden, antique gold and ivory.
+   Original CSS architecture; the reference-card deity photograph is not used. */
+:root {
+  --maroon: #174d3d;
+  --gold: #b99a54;
+  --muted: #748074;
+  --color-maroon: #174d3d;
+  --color-gold: #b99a54;
+  color: #31453a;
+  background: #faf8ee;
+}
+.site-header, .site-footer, .celebration-section { background: #faf8ee; }
+.cinematic-hero {
+  background: radial-gradient(ellipse at 50% 35%, #3f6143 0%, #194735 40%, #0a2d27 100%);
+  color: #f5eaca;
+}
+.cinematic-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at center, #dbcc9026 1px, transparent 1.5px);
+  background-size: 32px 32px;
+  opacity: .24;
+  pointer-events: none;
+}
+.architectural-frame .arch { opacity: .3; }
+.hero-halo { background: radial-gradient(ellipse, #d2b35b35, transparent 68%); }
+.temple-backdrop { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.temple-toran { position: absolute; top: 0; left: 3%; right: 3%; height: 72px; display: flex; justify-content: space-around; border-top: 3px solid #bea46380; }
+.temple-toran span { width: 22px; height: 45px; border-radius: 0 80% 0 80%; transform: rotate(22deg); transform-origin: top; background: linear-gradient(125deg, #a6b65c 0%, #527544 45%, #254c34 100%); border: 1px solid #c1b36145; box-shadow: inset 1px 0 #e4d49140, 0 4px 12px #061a2040; }
+.temple-toran span:nth-child(3n) { height: 56px; transform: rotate(-15deg); }
+.temple-toran span:nth-child(5n) { background: linear-gradient(140deg,#cbb469,#637c44); }
+.temple-column { position: absolute; top: 16%; bottom: 0; width: 64px; border: 1px solid #c3a95c65; border-radius: 28px 28px 0 0; background: repeating-linear-gradient(90deg,#a9925540 0 3px,#183c2c20 3px 12px), linear-gradient(90deg,#a88c4925,#d3b76b35,#a88c4910); box-shadow: 0 0 0 6px #c3a95c08, 0 0 0 7px #c3a95c35; opacity: .7; }
+.temple-column-left { left: 4.5%; }
+.temple-column-right { right: 4.5%; }
+.temple-column::before, .temple-column::after { content: ''; position: absolute; left: -12px; right: -12px; height: 28px; border: 1px solid #c8ab6680; background: linear-gradient(#b6a26335,#c8ab6655,#7a783125); }
+.temple-column::before { top: 12px; border-radius: 8px; }
+.temple-column::after { bottom: 32px; }
+.temple-column i { position: absolute; left: 7px; right: 7px; height: 22px; border: 1px solid #ccb57565; border-radius: 50%; }
+.temple-column i:nth-child(1) { top: 20%; }
+.temple-column i:nth-child(2) { top: 48%; }
+.temple-column i:nth-child(3) { top: 76%; }
+.temple-sanctum { position: absolute; width: 760px; height: 680px; top: 52%; left: 50%; transform: translate(-50%,-50%); opacity: .3; }
+.temple-crown { position: absolute; top: 0; left: 50%; transform: translateX(-50%); color: #e4c975; font-size: 55px; }
+.temple-tier { position: absolute; height: 32px; left: 50%; transform: translateX(-50%); border: 1px solid #d1b77175; background: repeating-linear-gradient(90deg,transparent 0 20px,#bd9e5050 20px 23px),linear-gradient(#baa14c35,#17413160); }
+.tier-one { top: 66px; width: 28%; }
+.tier-two { top: 107px; width: 43%; }
+.tier-three { top: 148px; width: 62%; }
+.temple-door { position: absolute; inset: 199px 15% 0; border: 1px solid #d2b45b70; border-radius: 260px 260px 0 0; box-shadow: 0 0 0 16px #d1b77105,0 0 0 17px #d1b77145,0 0 0 40px #d1b77103,0 0 0 41px #d1b77125; }
+.temple-floor { position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(transparent,#d6c58a10),repeating-linear-gradient(0deg,transparent 0 34px,#d6c58a15 35px 36px); }
+.invitation-cover { z-index: 1; }
+.cover-family { font-family: var(--font-serif); font-size: 24px; font-style: italic; color: #e0c58e; margin-top: 18px; }
+.sacred-mark { position: relative; display: block; flex: 0 0 51px; width: 48px; height: 51px; margin-bottom: 20px; filter: drop-shadow(0 0 18px #ebcf7560); }
+.sacred-mark i { position: absolute; inset: 0; border: solid #f9efd0; border-width: 0 8px 8px; border-radius: 0 0 24px 24px; }
+.sacred-mark b { position: absolute; width: 7px; height: 40px; top: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; background: #bf7150; }
+.invitation-cover h1 { font-size: clamp(76px, 8vw, 126px); }
+.open-invitation { border-color: #d2bb7a; background: #e8d7a7; color: #173d2d; }
+.open-invitation:hover { background: #f3e4bf; }
+.petal { background: linear-gradient(135deg,#dbbe76,#8ca05285); }
+.event-card.auspicious { background: #174d3d; border-color: #174d3d; }
+.quote-section { background: radial-gradient(ellipse at center,#386147,#113b31); }
+.events-section { background: #eef0e2; border-color: #dce2ce; }
+.event-card { background: #fcfaf1; border-color: #d9decb; }
+.event-card h3 { font-size: 32px; }
+.event-card.auspicious h3 { color: #f5e9c9; }
+.venue-art { background: radial-gradient(ellipse at top,#d7dfbd,#e5e6d2 65%); }
+.venue-arch { background: linear-gradient(#c8d5ad40,#f5f1dca0); }
+.venue-arch>span { color: #345f45; }
+.rsvp-section { background: #f0f2e6; }
+.primary-button:hover { background: #296649; }
+.music-button.playing { background: #e5ebd8; color: #174d3d; }
+.motion-preference button, .playback-notice:not(.sr-only) { background: #123d32; }
+.parchment-copy h2 { font-size: 25px; line-height: 1.08; }
+.parchment-blessing { font-size: 13px; }
+.parchment-message { font-size: 14px; }
+.parchment-date { font-size: 17px; }
+.parchment-copy { color: #264a36; }
+.bride-family { max-width: 610px; margin: 19px auto 0; font-size: 12px; line-height: 1.9; color: #748074; }
+.family-hosts { margin: 38px auto 0; padding: 28px 20px 0; max-width: 630px; border-top: 1px solid #d5dcc4; }
+.family-hosts .section-label { margin-bottom: 13px; }
+.family-hosts p { font-family: var(--font-serif); font-size: 25px; line-height: 1.5; color: #315b43; }
+.family-hosts small { display: block; margin-top: 17px; color: #748074; font-size: 11px; line-height: 1.8; }
+.vratham-location { padding: 23px 0 0; margin-top: 26px; border-top: 1px solid #dce2ce; }
+.vratham-location p { font-size: 12px; line-height: 1.9; color: #546d54; margin-top: 11px; }
+.vratham-location small { font-size: 10px; color: #7d897a; display: block; margin-top: 8px; }
+.site-footer .preview-disclaimer { padding: 15px 0 25px; max-width: 620px; font-family: var(--font-sans); font-style: normal; font-size: 10px; line-height: 1.8; color: #7a8576; }
+@media (max-width:1100px) {
+  .parchment-copy h2 { font-size: 22px; }
+  .parchment-message { font-size: 12px; }
+  .parchment-date { font-size: 16px; }
+  .temple-column { width: 42px; }
+}
+@media (max-width:760px) {
+  .cinematic-hero, .invitation-cover { min-height: 820px; }
+  .temple-toran { height: 55px; left: 0; right: 0; }
+  .temple-toran span { width: 12px; height: 27px; }
+  .temple-toran span:nth-child(3n) { height: 34px; }
+  .temple-toran span:nth-child(even) { display: none; }
+  .temple-column { width: 23px; top: 18%; opacity: .4; }
+  .temple-column-left { left: 5%; }
+  .temple-column-right { right: 5%; }
+  .temple-sanctum { width: 470px; height: 640px; opacity: .2; }
+  .hero-topline { top: 46px; }
+  .hero-topline span:last-child { display: none; }
+  .invitation-cover { padding-top: 85px; }
+  .invitation-cover h1 { font-size: clamp(66px,20vw,90px); margin: 18px 0 15px; }
+  .sacred-mark { flex-basis: 38px; width: 35px; height: 38px; margin-bottom: 13px; }
+  .sacred-mark i { border-width: 0 6px 6px; }
+  .sacred-mark b { height: 28px; width: 5px; }
+  .cover-family { font-size: 20px; margin-top: 10px; }
+  .cover-blessing { font-size: 12px; }
+  .parchment-copy h2 { font-size: 19px; }
+  .parchment-blessing { display: none; }
+  .parchment-with { font-size: 15px; line-height: 1.1; margin: 3px 0; }
+  .parchment-divider { line-height: 1; margin: 5px 0; }
+  .parchment-message { font-size: 11px; line-height: 1.25; }
+  .parchment-date { font-size: 13px; line-height: 1.2; margin-top: 7px; }
+  .event-card h3 { font-size: 30px; }
+  .couple-formal { flex-direction: column; gap: 12px; }
+  .family-hosts p { font-size: 22px; }
+  .motion-preference-open { top: 57px; }
+}
+@media (max-width:370px) {
+  .parchment-copy h2 { font-size: 16px; }
+  .parchment-message { display: none; }
+  .parchment-with { font-size: 13px; line-height: 1; margin: 2px 0; }
+  .parchment-divider { font-size: 11px; margin: 4px 0; }
+  .parchment-date { font-size: 12px; margin-top: 6px; }
+  .parchment-city { line-height: 1; }
+}

@@ -1,0 +1,74 @@
+# Murthy & Suguna — Malapaka’s cinematic wedding invitation
+
+A complete React + Vite + Tailwind CSS v4 + Framer Motion frontend. All wedding copy, dates, venue, media URLs, and the optional RSVP endpoint live in [src/config/weddingDetails.js](src/config/weddingDetails.js).
+
+This is an independent copy in **murthyinvitation**. It has no connection to Rahul’s Git repository and does not modify that project. The green-and-gold temple-garden theme is in [src/temple-theme.css](src/temple-theme.css), with original decorative architecture in [src/components/TempleBackdrop.jsx](src/components/TempleBackdrop.jsx).
+
+**Preview footage only:** the existing bride/groom clips are temporarily reused by request. They are not footage of Murthy and Suguna. Replace them before distributing the final invitation. The UI includes a footer notice until `media.temporaryCharacters` is set to `false` after replacement.
+
+## Confirmed invitation details
+
+- Groom: Chi. Suryanarayana Murthy (Sai).
+- Bride: Chi. La. Sow. Lakshmi Sai Suguna, only daughter of Sri Madduri Srinivasa Rao and Smt. Aruna, Akividu.
+- Sumuhurtham: Friday, 20 November 2026, **8:56 PM IST**, Uttarabhadra Nakshatrayuktha Mithuna Lagnam.
+- Dinner: Friday, 20 November 2026, **7:00 PM onwards**.
+- Wedding venue: Sri Padmavathi Venkateswara Swamy Function Hall, Sai Baba Temple, Ayyamur, Akividu Mandal, W.G. Dt., Andhra Pradesh.
+- Sri Satyanarayana Swamy Vratham: Sunday, 22 November 2026, **9:00 AM onwards**, family residence in Hyderabad. No precise residence address was supplied; guests are asked to contact the family.
+- Hosts: Malapaka Murali Ravindra Prasad and Smt. Venkata Surya Sri Lakshmi.
+
+English content is transcribed from the supplied card and confirmed by the user. A Telugu translation has not been invented. Venue directions use a Google Maps search, not an unverified exact location pin.
+
+## Development
+
+Requires Node.js 22+ and npm. Run `npm install`, then `npm run dev -- --port 5174`. A **Murthy invitation: dev** task is also supplied in VS Code, using port 5174 so Rahul’s preview on 5173 can stay open. Run `npm run build` for the production `dist` folder, `npm run preview` to preview it, and `npm test` for countdown, wedding-details and media tests. Deploy `dist` to any static host. Sharing a localhost link will not make the invitation accessible to guests: publish the site first.
+
+## Temporary footage and replacement
+
+The temporary active MP4s are mapped as follows. The older bride/groom WhatsApp clips remain untouched in assets but are no longer referenced or included in the production bundle:
+
+| Supplied clip | Role |
+| --- | --- |
+| Groom_walking_in_place_dfd0f81e.mp4 | Temporary groom performer, 1280×720, faces right |
+| Bride_walking_in_place_671ecc04.mp4 | Temporary bride performer, 1280×720, faces left |
+| WhatsApp Video 2026-11-02 at 1.19.01 PM.mp4 | Scroll opening |
+
+No illustrated humans are used. Real filmed/generated human footage from the previous invitation is temporarily reused, not presented as the actual new couple. These bride/groom clips are about 10 seconds at 24 fps and 3.9/3.4 MB respectively; the unchanged scroll is about 1.7 MB. The real HTML video frames are displayed through WebGL with green-dominance soft keying, edge despill, and fixed crops. Cropped canvases and images use `object-fit: contain`, preserving proportions. A small mask removes the scroll clip's residual green spotlight above the parchment without covering the parchment or people. Video audio stays muted; the music toggle remains independent.
+
+The groom and bride load sequentially **only after opening**, then play together with their durations normalized to a 10-second Framer Motion entrance. The scroll loads only after arrival. Its editable HTML text fades in once the parchment opens. Matching transparent standing images derived from final footage frames hold the character poses. After the scroll animation finishes, its clean open-parchment frame extracted from the same video remains visible, avoiding frozen flower overlays behind the text. Replay reloads the introduction. Skip reveals the readable invitation immediately.
+
+Transparent posters are included and regenerated from the new footage at 9.9 seconds. Skip also displays these matching final poses instead of leaving characters mid-step. To regenerate them, run `npm run prepare:posters`. This uses development-only `ffmpeg-static` and `sharp`; neither is shipped in the frontend. [src/config/mediaAssets.js](src/config/mediaAssets.js) shares the crop fractions, filenames, facing flags, and poster times with the renderer and generator. When replacing a clip, update its import in the wedding configuration and its filename/crop in the shared media configuration. Supplied videos retain their original content.
+
+## Character direction and quality
+
+The new footage naturally faces inward: groom on the left looking right, bride on the right looking left, including their final standing poses. Both mirroring flags are disabled, preserving clothing/jewellery placement. The bride is positioned farther right inside her source frame, so her crop is [0.48, 0.82]; the groom crop is [0.30, 0.64]. Both crops have equal proportions to keep the displayed people consistently scaled.
+
+Desktop character display height is 472px (540px on large screens), below the new footage's native 720px height, with restrained colour matching and soft grounding shadows. These clips are 720p, not 1080p/4K. Sharpening or stretching cannot recover missing facial detail; higher-resolution original footage can improve quality further. Regenerate matching posters and retune crops/keying when replacing footage.
+
+## Missing mandap asset
+
+**No clean mandap or deity background file was available in the project assets.** The new emerald/gold temple-garden backdrop is original CSS decoration inspired by the invitation’s palette, toran and temple motifs, not a copy of the deity photograph. Put a clean licensed background image/video into `public/assets/` and set `media.backgroundPoster` / `media.backgroundVideo` in the configuration to `/assets/your-file.jpg` or `/assets/your-file.mp4`. Never substitute human illustrations for the supplied videos.
+
+## Music
+
+Music attempts to start automatically on page load. Browsers may block audible autoplay; in that case it starts on the first click/tap or keypress, including opening the invitation. The toggle reports “on” only when audio is actually playing and allows manual mute. Muting prevents subsequent interactions from restarting music. With no audio file supplied, an original, gentle tanpura-inspired synthesized drone plays through Web Audio. Set `media.music` to your licensed track URL to replace it. Audio pauses when the tab is hidden and resumes when visible unless manually muted.
+
+## RSVP and privacy
+
+**By default, responses are saved to this browser only and are not sent to the couple.** This limitation appears visibly above the form and in the success confirmation. No backend, credentials, email delivery, or remote database is silently assumed.
+
+To enable real delivery, set `rsvpEndpoint` to your HTTPS backend URL. The form sends JSON containing `name`, optional `email`, `guests` (1–10), `attendance`, and optional `message`. The server must validate, rate-limit, securely store responses, allow the deployed origin through CORS, and return a successful HTTP status only after accepting the response. Do not put private API keys in client configuration. Browser-local responses use the separate `murthy-suguna-rsvp` key and can be removed by clearing site storage.
+
+## Accessibility and performance
+
+- Reduced-motion visitors see the static final-pose invitation without downloading entrance videos. A visible notice explains the skip, and **Play full animation** explicitly opts into the cinematic entrance for this visit without changing system settings. Decorative motion remains reduced.
+- Videos, the entrance timeline, petals, and particles pause while the hero is offscreen or the tab is hidden.
+- Decode callbacks redraw the keyed video only for actual frames; the final canvas does not run a perpetual render loop.
+- WebGL/asset failures retain transparent poster fallbacks. All details remain readable in the HTML sections.
+- Native share is used when available, with clipboard fallback. Google Maps opens an exact-venue search; verify the venue before travel.
+- Countdown uses the explicit Indian timezone offset, not the visitor's local timezone.
+- Mobile moves the actual characters below the parchment, preserves aspect ratios, and exposes full details in responsive event/venue sections.
+- Google Fonts use `display=swap`; local serif/sans fallbacks work offline. Self-host the fonts if third-party requests are undesirable.
+
+## Validation
+
+Production build, unit tests, desktop/mobile browser checks, completed video playback, reduced-motion behavior, overflow checks, and browser-local RSVP submission have been verified. `npm audit` reports no known vulnerabilities at setup time.
