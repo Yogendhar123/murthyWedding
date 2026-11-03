@@ -80,8 +80,14 @@
 .family-hosts .section-label { margin-bottom: 13px; }
 .family-hosts p { font-family: var(--font-serif); font-size: 25px; line-height: 1.5; color: #315b43; }
 .family-hosts small { display: block; margin-top: 17px; color: #748074; font-size: 11px; line-height: 1.8; }
+.venue-contacts { margin-top: 26px; }
+.contact-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+.contact-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 12px 18px; border: 1px solid #b99a54; border-radius: 4px; color: #174d3d; background: #faf8ee; font-size: 14px; text-decoration: none; }
+.contact-button:hover { background: #e5ebd8; }
+.contact-button:focus-visible { outline: 2px solid #174d3d; outline-offset: 4px; }
 .vratham-location { padding: 23px 0 0; margin-top: 26px; border-top: 1px solid #dce2ce; }
 .vratham-location p { font-size: 12px; line-height: 1.9; color: #546d54; margin-top: 11px; }
+.vratham-location .primary-button { margin-top: 18px; }
 .vratham-location small { font-size: 10px; color: #7d897a; display: block; margin-top: 8px; }
 .site-footer .preview-disclaimer { padding: 15px 0 25px; max-width: 620px; font-family: var(--font-sans); font-style: normal; font-size: 10px; line-height: 1.8; color: #7a8576; }
 @media (max-width:1100px) {

@@ -17,6 +17,13 @@ describe('Malapaka wedding card details', () => {
     expect(details.events.find(event => event.auspicious)?.id).toBe('muhurtham');
   });
 
+  it('uses the supplied venue location and family contact numbers', () => {
+    expect(details.venue.mapsUrl).toBe('https://maps.app.goo.gl/7kYMoVFM4qckcU9V7?g_st=aw');
+    expect(details.venue.secoudurl).toBe('https://share.google/wPr825yzIhUGLZ3os');
+    expect(details.contacts).toEqual(['8328001840', '9247375929']);
+    expect(details.contacts.every(number => /^\d{10}$/.test(number))).toBe(true);
+  });
+
   it('keeps the Hyderabad Vratham distinct from the Akividu wedding venue', () => {
     expect(details.venue.name).toBe('Sri Padmavathi Venkateswara Swamy Function Hall');
     expect(details.events.find(event => event.id === 'dinner').time).toBe('7:00 PM onwards');

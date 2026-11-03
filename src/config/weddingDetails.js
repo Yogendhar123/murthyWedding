@@ -30,7 +30,8 @@ export const weddingDetails = {
     { id: 'vratham', name: 'Sri Satyanarayana Swamy Vratham', date: '22 November 2026', day: 'Sunday', time: '9:00 AM onwards', number: '03', chapter: 'THE DIVINE BLESSINGS', description: 'A sacred gathering for Sri Satyanarayana Swamy Vratham at our residence in Hyderabad.', location: 'Family residence, Hyderabad', icon: 'flower', startsAt: '2026-11-22T09:00:00+05:30' },
   ],
   eventsNote: 'Wedding dinner and Sumuhurtham: Akividu. Sri Satyanarayana Swamy Vratham: family residence in Hyderabad on 22 November.',
-  venue: { name: 'Sri Padmavathi Venkateswara Swamy Function Hall', address: ['Sai Baba Temple, AJJAMUR,', 'Akividu Mandal, W.G. Dt., Andhra Pradesh'], mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Sri+Padmavathi+Venkateswara+Swamy+Function+Hall+Sai+Baba+Temple+AJJAMUR+Akividu+Andhra+Pradesh' },
+  venue: { name: 'Sri Padmavathi Venkateswara Swamy Function Hall', address: ['Sai Baba Temple, AJJAMUR,', 'Akividu Mandal, W.G. Dt., Andhra Pradesh'], mapsUrl: 'https://maps.app.goo.gl/7kYMoVFM4qckcU9V7?g_st=aw',secoudurl:'https://maps.app.goo.gl/JXfgqwezdXQfxMek9' },
+  contacts: ['8328001840', '9247375929'],
   media: {
     // TEMPORARY: reused footage by request, not footage of this couple.
     // Replace the two imports above and matching mediaAssets entries/posters.
