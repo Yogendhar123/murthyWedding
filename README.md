@@ -12,7 +12,7 @@ This is an independent copy in **murthyinvitation**. It has no connection to Rah
 - Bride: Chi. La. Sow. Lakshmi Sai Suguna, only daughter of Sri Madduri Srinivasa Rao and Smt. Aruna, Akividu.
 - Sumuhurtham: Friday, 20 November 2026, **8:56 PM IST**, Uttarabhadra Nakshatrayuktha Mithuna Lagnam.
 - Dinner: Friday, 20 November 2026, **7:00 PM onwards**.
-- Wedding venue: Sri Padmavathi Venkateswara Swamy Function Hall, Sai Baba Temple, Ayyamur, Akividu Mandal, W.G. Dt., Andhra Pradesh.
+- Wedding venue: Sri Padmavathi Venkateswara Swamy Function Hall, Sai Baba Temple, AJJAMUR, Akividu Mandal, W.G. Dt., Andhra Pradesh.
 - Sri Satyanarayana Swamy Vratham: Sunday, 22 November 2026, **9:00 AM onwards**, family residence in Hyderabad. No precise residence address was supplied; guests are asked to contact the family.
 - Hosts: Malapaka Murali Ravindra Prasad and Smt. Venkata Surya Sri Lakshmi.
 
